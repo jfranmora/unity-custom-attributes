@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExampleReadOnlyAttribute : MonoBehaviour
+public class ExampleReadOnly : MonoBehaviour
 {
     public int a;
     [ReadOnly] public float b;
