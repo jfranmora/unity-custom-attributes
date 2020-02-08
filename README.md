@@ -1,5 +1,6 @@
 # unity-custom-attributes
-Custom attributes to make Unity easier!
+Custom attributes to make Unity inspector better!
 
-# [ReadOnly]
-# [DefaultFirstInstance]
+# Attributes
+### [ReadOnly]
+### [DefaultFirstInstance]
