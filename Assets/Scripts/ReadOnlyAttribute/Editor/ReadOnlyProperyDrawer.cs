@@ -11,4 +11,9 @@ public class ReadOnlyProperyDrawer : PropertyDrawer
         EditorGUI.PropertyField(position, property, label);
         GUI.enabled = enabledState;
     }
+
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+	{
+		return base.GetPropertyHeight(property, label);
+	}
 }
