@@ -12,7 +12,7 @@ public abstract class AutoPopulateBasePropertyDrawer<AttributeType> : PropertyDr
 	{
 		EditorGUI.BeginProperty(position, label, property);
 
-		EditorGUI.PropertyField(position, property);
+		EditorGUI.PropertyField(position, property, true);
 		if (property.objectReferenceValue == null)
 		{
 			PopulateSerializedProperty(property);
