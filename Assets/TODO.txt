@@ -1,0 +1,12 @@
+== TODO ==
+[ ] Change functionality to DefaultFirstInstance to DefaultAssetDatabaseInstance, if simple field get first, if array/list populate with database results
+
+[ ] RequiredField
+[ ] DefaultGetComponent - If simple field GetComponent, if array/list populate with GetComponents
+[ ] DefaultGetComponentInChildren
+[ ] DefaultGetComponentInParent
+[ ] DefaultFindObject
+
+== DONE ==
+[x] ReadOnly
+[x] DefaultFirstInstance
