@@ -1,12 +1,12 @@
 == TODO ==
-[ ] Change functionality to DefaultFirstInstance to DefaultAssetDatabaseInstance, if simple field get first, if array/list populate with database results
-
 [ ] RequiredField
-[ ] DefaultGetComponent - If simple field GetComponent, if array/list populate with GetComponents
-[ ] DefaultGetComponentInChildren
-[ ] DefaultGetComponentInParent
-[ ] DefaultFindObject
+[ ] SceneEnum - Easy way to assign a scene name to a string (Using dropdown)
+[ ] HideIf(string id, bool invert) - Easy way to hide something if a field, method or property is false
 
 == DONE ==
 [x] ReadOnly
-[x] DefaultFirstInstance
+[x] DefaultAssetDatabaseInstance
+[x] DefaultGetComponent
+[x] DefaultGetComponentInChildren
+[x] DefaultGetComponentInParent
+[x] DefaultFindObject
