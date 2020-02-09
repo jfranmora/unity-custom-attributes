@@ -86,7 +86,7 @@ public class HideIfPropertyDrawer : PropertyDrawer
 				return (bool)methodInfo.Invoke(targetObject, null);
 			}
 		}
-		catch (InvalidCastException e)
+		catch
 		{
 			throw new Exception($"[HideIf] {fieldName} is not bool");
 		}
