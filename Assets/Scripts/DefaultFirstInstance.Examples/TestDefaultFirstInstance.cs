@@ -2,6 +2,9 @@
 
 public class TestDefaultFirstInstance : MonoBehaviour
 {
-	[DefaultFirstInstance]
+	[DefaultAssetDatabaseInstance]
 	public ScriptableObjectData data;
+
+	[DefaultAssetDatabaseInstance]
+	public ScriptableObjectData[] dataArray;
 }

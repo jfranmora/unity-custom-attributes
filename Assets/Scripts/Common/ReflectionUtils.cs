@@ -7,7 +7,7 @@ public static class ReflectionUtils
 	public static Type GetTypeFromSerializedObject(SerializedProperty property)
 	{
 		Type parentType = property.serializedObject.targetObject.GetType();
-		FieldInfo fieldInfo = parentType.GetField(property.propertyPath);
+		FieldInfo fieldInfo = parentType.GetField(property.name);
 		return fieldInfo.FieldType;
 	}
 }
