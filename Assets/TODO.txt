@@ -3,8 +3,10 @@
 [ ] EnableIf	=> ReadOnly when boolean is false
 [ ] DisableIf	=> ReadOnly when boolean is true
 [ ] SceneEnum		=> Easy way to assign a scene name to a string (Using dropdown)
-[ ] RequiredField
 [ ] Button
+[ ] HelpBox
+
+== DOING ==
 
 == DONE ==
 [x] DefaultAssetDatabaseInstance
@@ -14,3 +16,4 @@
 [x] DefaultFindObject
 [x] ReadOnly
 [x] HideIf(string id, bool invert)	=> Hide field if value is true
+[x] RequiredField
