@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public abstract class AutoPopulateBasePropertyDrawer<AttributeType> : PropertyDrawer where AttributeType : AutoPopulateBaseAttribute
+public abstract class AutoPopulateBaseDrawer<AttributeType> : PropertyDrawer where AttributeType : AutoPopulateBaseAttribute
 {
 	protected AttributeType TargetAttribute => attribute as AttributeType;
 

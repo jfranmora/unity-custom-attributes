@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(RequiredFieldAttribute))]
-public class RequiredFieldPropertyDrawer : PropertyDrawer
+public class RequiredFieldDrawer : PropertyDrawer
 {
 	private Color WrongColor = new Color(239 / 255f, 117 / 255f, 100 / 255f);
 

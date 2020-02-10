@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(HideIfAttribute))]
-public class HideIfPropertyDrawer : PropertyDrawer
+public class HideIfDrawer : PropertyDrawer
 {
 	public HideIfAttribute TargetAttribute => attribute as HideIfAttribute;
 
