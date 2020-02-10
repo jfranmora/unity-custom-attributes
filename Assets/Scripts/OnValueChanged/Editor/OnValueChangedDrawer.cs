@@ -6,11 +6,11 @@ using UnityEngine;
 public class OnValueChangedDrawer : PropertyDrawer
 {
 	private OnValueChangedAttribute TargetAttribute => (OnValueChangedAttribute) attribute;
-	
+
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
 		EditorGUI.BeginProperty(position, label, property);
-		
+
 		EditorGUI.BeginChangeCheck();
 		EditorGUI.PropertyField(position, property, label, true);
 		if (EditorGUI.EndChangeCheck())
@@ -29,11 +29,11 @@ public class OnValueChangedDrawer : PropertyDrawer
 
 	private void OnValueChanged(SerializedProperty property)
 	{
-		var methodInfo = property.serializedObject.targetObject.GetType().GetMethod(TargetAttribute.CallbackName, 
+		var methodInfo = property.serializedObject.targetObject.GetType().GetMethod(TargetAttribute.CallbackName,
 			BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 		if (methodInfo == null || methodInfo.ReturnType != typeof(void) || methodInfo.GetParameters().Length > 0)
 		{
-			Debug.Log($"Callback name: {TargetAttribute.CallbackName} not found!");
+			Debug.LogError($"Callback name: {TargetAttribute.CallbackName} not found or is not valid!");
 			return;
 		}
 
