@@ -40,6 +40,7 @@ If the field is null, the field will be populated with the first result of FindO
 # Planned Attributes
 - [x] **ReadOnly**
 - [x] **RequiredField**
+- [x] **ShowIf**
 - [x] **HideIf(string memberName, bool invert):** Hide field if bool result of memberName is true
 - [x] **HelpBox(string message, HelpBoxMessageType messageType)**
 - [x] **OnValueChanged(string memberName):** Call function when value is changed (Can be useful for validation)
@@ -48,7 +49,6 @@ If the field is null, the field will be populated with the first result of FindO
 - [x] **DefaultGetComponentInChildren**
 - [x] **DefaultGetComponentInParent**
 - [x] **DefaultFindObject**
-- [ ] **ShowIf:** The oposite version of HideIf
 - [ ] **EnableIf:** ReadOnly when boolean is false
 - [ ] **DisableIf:** ReadOnly when boolean is true
 - [ ] **SceneEnum:** Easy way to assign a scene name to a string (Using dropdown)

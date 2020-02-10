@@ -23,13 +23,13 @@ public class TestHideIf : MonoBehaviour
 	public bool CarSelected => Type == VehicleType.Car;
 
 	[HideIf(nameof(a0))]
-	public float hidden1;
+	public float data1;
 
 	[HideIf(nameof(SomeMethod))]
-	public float hidden3;
+	public float data2;
 
 	[HideIf(nameof(CarSelected))]
-	public TestData hidden2;
+	public TestData data3;
 
 	private bool SomeMethod() 
 	{

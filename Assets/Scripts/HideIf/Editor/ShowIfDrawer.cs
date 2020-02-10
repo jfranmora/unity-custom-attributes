@@ -4,10 +4,10 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(HideIfAttribute))]
-public class HideIfDrawer : PropertyDrawer
+[CustomPropertyDrawer(typeof(ShowIfAttribute), true)]
+public class ShowIfDrawer : PropertyDrawer
 {
-	public HideIfAttribute TargetAttribute => attribute as HideIfAttribute;
+	public ShowIfAttribute TargetAttribute => attribute as ShowIfAttribute;
 
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
