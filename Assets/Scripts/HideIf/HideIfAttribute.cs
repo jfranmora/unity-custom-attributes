@@ -2,7 +2,7 @@
 
 public class HideIfAttribute : PropertyAttribute
 {
-	public string FieldName { get; private set; }
+	public string MemberName { get; private set; }
 
 	public bool Invert { get; private set; }
 
@@ -13,7 +13,7 @@ public class HideIfAttribute : PropertyAttribute
 
 	public HideIfAttribute(string fieldName, bool invert)
 	{
-		FieldName = fieldName;
+		MemberName = fieldName;
 		Invert = invert;
 	}
 }

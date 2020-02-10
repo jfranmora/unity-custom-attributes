@@ -15,11 +15,16 @@ public class TestHideIf : MonoBehaviour
 	public bool b0;
 
 	[HideIf(nameof(a0))]
-	public float value;
+	public float hidden1;
 
 	[HideIf(nameof(b0))]
-	public float value2;
+	public TestData hidden2;
 
-	[HideIf(nameof(b0))]
-	public TestData data;
+	[HideIf(nameof(Result))]
+	public float hidden3;
+
+	private bool Result() 
+	{
+		return a0 && b0;
+	}
 }

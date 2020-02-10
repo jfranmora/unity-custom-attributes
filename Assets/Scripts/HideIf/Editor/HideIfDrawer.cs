@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
@@ -63,34 +65,32 @@ public class HideIfDrawer : PropertyDrawer
 	{
 		var targetType = property.serializedObject.targetObject.GetType();
 		var targetObject = property.serializedObject.targetObject;
-		var fieldName = TargetAttribute.FieldName;
+		var memberName = TargetAttribute.MemberName;
 
 		try
 		{
+			var memberInfo = targetType.GetMember(memberName, 
+				MemberTypes.Field | MemberTypes.Property | MemberTypes.Method,
+				BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).FirstOrDefault();
 
-			var fieldInfo = targetType.GetField(fieldName);
-			if (fieldInfo != null)
+			if (memberInfo != null)
 			{
-				return (bool)fieldInfo.GetValue(targetObject);
-			}
-
-			var propertyInfo = targetType.GetProperty(fieldName);
-			if (propertyInfo != null)
-			{
-				return (bool)propertyInfo.GetValue(targetObject);
-			}
-
-			var methodInfo = targetType.GetMethod(fieldName);
-			if (methodInfo != null)
-			{
-				return (bool)methodInfo.Invoke(targetObject, null);
+				switch (memberInfo.MemberType)
+				{
+					case MemberTypes.Field:
+						return (bool)((FieldInfo)memberInfo).GetValue(targetObject);
+					case MemberTypes.Property:
+						return (bool)((PropertyInfo)memberInfo).GetValue(targetObject);
+					case MemberTypes.Method:
+						return (bool)((MethodInfo)memberInfo).Invoke(targetObject, null);
+				}
 			}
 		}
 		catch
 		{
-			throw new Exception($"[HideIf] {fieldName} is not bool");
+			throw new Exception($"[HideIf] {memberName} is not bool");
 		}
 
-		throw new Exception($"[HideIf] There is no field named {fieldName}");
+		throw new Exception($"[HideIf] There is no field named {memberName}");
 	}
 }
