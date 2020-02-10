@@ -4,7 +4,6 @@
 [ ] DisableIf		=> ReadOnly when boolean is true
 [ ] SceneEnum		=> Easy way to assign a scene name to a string (Using dropdown)
 [ ] Button
-[ ] OnValueChanged(string methodName)	=> Call function when value is changed
 
 == DOING ==
 
@@ -18,3 +17,4 @@
 [x] HideIf(string id, bool invert)	=> Hide field if value is true
 [x] RequiredField
 [x] HelpBox(message, messageType)
+[x] OnValueChanged(string methodName)	=> Call function when value is changed
