@@ -2,6 +2,12 @@
 
 public class TestHideIf : MonoBehaviour
 {	
+	public enum VehicleType
+	{
+		Car,
+		Motorbike
+	}
+
 	[System.Serializable]
 	public struct TestData
 	{
@@ -11,20 +17,22 @@ public class TestHideIf : MonoBehaviour
 	}
 
 	public bool a0;
-
 	public bool b0;
+	public VehicleType Type;
+
+	public bool CarSelected => Type == VehicleType.Car;
 
 	[HideIf(nameof(a0))]
 	public float hidden1;
 
-	[HideIf(nameof(b0))]
-	public TestData hidden2;
-
-	[HideIf(nameof(Result))]
+	[HideIf(nameof(SomeMethod))]
 	public float hidden3;
 
-	private bool Result() 
+	[HideIf(nameof(CarSelected))]
+	public TestData hidden2;
+
+	private bool SomeMethod() 
 	{
-		return a0 && b0;
+		return b0;
 	}
 }
