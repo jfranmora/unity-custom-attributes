@@ -2,9 +2,8 @@
 
 public class DefaultGetComponentInChildrenAttribute : AutoPopulateBaseAttribute
 {
-	public GetComponentType Type { get; set; }
 	public bool IncludeInactive { get; set; }
-
+	
 	public DefaultGetComponentInChildrenAttribute()
 	{
 	}

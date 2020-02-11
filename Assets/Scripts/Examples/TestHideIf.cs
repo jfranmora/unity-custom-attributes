@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TestHideIf : MonoBehaviour
-{	
+{
 	public enum VehicleType
 	{
 		Car,
 		Motorbike
 	}
 
-	[System.Serializable]
+	[Serializable]
 	public struct TestData
 	{
 		public int a;
@@ -20,8 +21,6 @@ public class TestHideIf : MonoBehaviour
 	public bool b0;
 	public VehicleType Type;
 
-	public bool CarSelected => Type == VehicleType.Car;
-
 	[HideIf(nameof(a0))]
 	public float data1;
 
@@ -31,7 +30,9 @@ public class TestHideIf : MonoBehaviour
 	[HideIf(nameof(CarSelected))]
 	public TestData data3;
 
-	private bool SomeMethod() 
+	public bool CarSelected => Type == VehicleType.Car;
+
+	private bool SomeMethod()
 	{
 		return b0;
 	}

@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TestRequiredField : MonoBehaviour
 {
-	[System.Serializable]
+	[Serializable]
 	public struct Data
 	{
 		public float a;

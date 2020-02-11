@@ -1,12 +1,13 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using UnityEditor;
+using UnityEngine;
 
 [CustomPropertyDrawer(typeof(HelpBoxAttribute))]
+[CanEditMultipleObjects]
 public class HelpBoxAttributeDrawer : DecoratorDrawer
 {
 	private const float FieldSeparation = 10;
 
-	HelpBoxAttribute TargetAttribute => (HelpBoxAttribute)attribute;
+	private HelpBoxAttribute TargetAttribute => (HelpBoxAttribute) attribute;
 
 	public override void OnGUI(Rect position)
 	{
@@ -18,13 +19,11 @@ public class HelpBoxAttributeDrawer : DecoratorDrawer
 
 	public override float GetHeight()
 	{
-		var style = (GUI.skin != null) ? GUI.skin.GetStyle("helpbox") : null;
-		if (style == null)
-		{
-			return base.GetHeight();
-		}
+		var style = GUI.skin != null ? GUI.skin.GetStyle("helpbox") : null;
+		if (style == null) return base.GetHeight();
 
-		return style.CalcHeight(new GUIContent(TargetAttribute.Message), EditorGUIUtility.currentViewWidth) + 5 + FieldSeparation;
+		return style.CalcHeight(new GUIContent(TargetAttribute.Message), EditorGUIUtility.currentViewWidth) + 5 +
+		       FieldSeparation;
 	}
 
 	private MessageType ToUnityEditorMessageType(HelpBoxMessageType style)

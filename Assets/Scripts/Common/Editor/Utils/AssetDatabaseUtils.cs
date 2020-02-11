@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using Object = UnityEngine.Object;
 
 public static class AssetDatabaseUtils
 {
-	public static IEnumerable<UnityEngine.Object> GetAssetsFromType(Type targetType)
+	public static IEnumerable<Object> GetAssetsFromType(Type targetType)
 	{
 		return AssetDatabase.FindAssets($"t:{targetType.Name}")
 			.Select(AssetDatabase.GUIDToAssetPath)

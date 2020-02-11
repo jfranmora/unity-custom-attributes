@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class AutoPopulateBaseAttribute : PropertyAttribute
 {
-	public Type TargetType { get; set; } = null;
-
+	public Type TargetType { get; private set; }
+	
 	public AutoPopulateBaseAttribute()
 	{
 	}

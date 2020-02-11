@@ -10,8 +10,8 @@ public enum HelpBoxMessageType
 
 public class HelpBoxAttribute : PropertyAttribute
 {
-	public string Message { get; private set; }
-	public HelpBoxMessageType Style { get; private set; } = HelpBoxMessageType.None;
+	public string Message { get; }
+	public HelpBoxMessageType Style { get; } = HelpBoxMessageType.None;
 
 	public HelpBoxAttribute(string message, HelpBoxMessageType style = HelpBoxMessageType.None)
 	{

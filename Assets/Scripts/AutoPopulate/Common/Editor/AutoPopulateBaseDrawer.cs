@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-public abstract class AutoPopulateBaseDrawer<AttributeType> : PropertyDrawer where AttributeType : AutoPopulateBaseAttribute
+public abstract class AutoPopulateBaseDrawer<AttributeType> : PropertyDrawer
+	where AttributeType : AutoPopulateBaseAttribute
 {
 	protected AttributeType TargetAttribute => attribute as AttributeType;
 
@@ -32,10 +34,10 @@ public abstract class AutoPopulateBaseDrawer<AttributeType> : PropertyDrawer whe
 		var targetObject = GetElements(property, targetType).FirstOrDefault();
 		if (targetObject != null)
 		{
-			property.objectReferenceValue = targetObject as UnityEngine.Object;
+			property.objectReferenceValue = targetObject;
 			property.serializedObject.ApplyModifiedPropertiesWithoutUndo();
 		}
 	}
 
-	protected abstract IEnumerable<UnityEngine.Object> GetElements(SerializedProperty property, Type targetType);
+	protected abstract IEnumerable<Object> GetElements(SerializedProperty property, Type targetType);
 }

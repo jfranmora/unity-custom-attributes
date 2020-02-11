@@ -2,9 +2,10 @@
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(RequiredFieldAttribute))]
+[CanEditMultipleObjects]
 public class RequiredFieldDrawer : PropertyDrawer
 {
-	private Color WrongColor = new Color(239 / 255f, 117 / 255f, 100 / 255f);
+	private readonly Color WrongColor = new Color(239 / 255f, 117 / 255f, 100 / 255f);
 
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{

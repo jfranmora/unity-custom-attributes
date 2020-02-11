@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
+[CanEditMultipleObjects]
 public class ReadOnlyDrawer : PropertyDrawer
 {
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

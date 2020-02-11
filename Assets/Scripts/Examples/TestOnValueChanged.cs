@@ -2,13 +2,13 @@
 
 public class TestOnValueChanged : MonoBehaviour
 {
-	[OnValueChanged(nameof(ValueChanged))] 
+	[OnValueChanged(nameof(ValueChanged))]
 	public float someValue;
 
 	[OnValueChanged(nameof(OnGameObjectChanged))]
 	public GameObject target;
 
-	[SerializeField, ReadOnly] 
+	[SerializeField, ReadOnly]
 	private Rigidbody rb;
 
 	private void ValueChanged()

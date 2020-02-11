@@ -2,7 +2,7 @@
 
 public class OnValueChangedAttribute : PropertyAttribute
 {
-	public string CallbackName { get; private set; }
+	public string CallbackName { get; }
 
 	public OnValueChangedAttribute(string callbackName)
 	{

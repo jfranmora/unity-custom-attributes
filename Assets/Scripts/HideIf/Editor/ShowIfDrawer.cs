@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(ShowIfAttribute), true)]
+[CanEditMultipleObjects]
 public class ShowIfDrawer : PropertyDrawer
 {
 	public ShowIfAttribute TargetAttribute => attribute as ShowIfAttribute;
@@ -21,7 +22,7 @@ public class ShowIfDrawer : PropertyDrawer
 		{
 			DrawFieldWithError(position, property, e.Message);
 		}
-		
+
 		EditorGUI.EndProperty();
 	}
 
@@ -50,7 +51,7 @@ public class ShowIfDrawer : PropertyDrawer
 			return CalculateVisibility(property) ? EditorGUI.GetPropertyHeight(property) : 0;
 		}
 		catch
-		{			
+		{
 			return EditorGUI.GetPropertyHeight(property) + EditorGUIUtility.singleLineHeight;
 		}
 	}
@@ -69,7 +70,7 @@ public class ShowIfDrawer : PropertyDrawer
 
 		try
 		{
-			var memberInfo = targetType.GetMember(memberName, 
+			var memberInfo = targetType.GetMember(memberName,
 				MemberTypes.Field | MemberTypes.Property | MemberTypes.Method,
 				BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).FirstOrDefault();
 
@@ -78,11 +79,11 @@ public class ShowIfDrawer : PropertyDrawer
 				switch (memberInfo.MemberType)
 				{
 					case MemberTypes.Field:
-						return (bool)((FieldInfo)memberInfo).GetValue(targetObject);
+						return (bool) ((FieldInfo) memberInfo).GetValue(targetObject);
 					case MemberTypes.Property:
-						return (bool)((PropertyInfo)memberInfo).GetValue(targetObject);
+						return (bool) ((PropertyInfo) memberInfo).GetValue(targetObject);
 					case MemberTypes.Method:
-						return (bool)((MethodInfo)memberInfo).Invoke(targetObject, null);
+						return (bool) ((MethodInfo) memberInfo).Invoke(targetObject, null);
 				}
 			}
 		}

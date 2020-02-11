@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomPropertyDrawer(typeof(OnValueChangedAttribute))]
+[CanEditMultipleObjects]
 public class OnValueChangedDrawer : PropertyDrawer
 {
 	private OnValueChangedAttribute TargetAttribute => (OnValueChangedAttribute) attribute;

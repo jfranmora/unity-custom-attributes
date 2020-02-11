@@ -2,8 +2,6 @@
 
 public class DefaultGetComponentAttribute : AutoPopulateBaseAttribute
 {
-	public GetComponentType Type { get; set; }
-
 	public DefaultGetComponentAttribute()
 	{
 	}

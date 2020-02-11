@@ -2,16 +2,11 @@
 
 public class ShowIfAttribute : PropertyAttribute
 {
-	public string MemberName { get; private set; }
+	public string MemberName { get; }
 
-	public bool Invert { get; private set; }
+	public bool Invert { get; }
 
-	public ShowIfAttribute(string fieldName) : this(fieldName, false)
-	{
-
-	}
-
-	public ShowIfAttribute(string fieldName, bool invert)
+	public ShowIfAttribute(string fieldName, bool invert = false)
 	{
 		MemberName = fieldName;
 		Invert = invert;

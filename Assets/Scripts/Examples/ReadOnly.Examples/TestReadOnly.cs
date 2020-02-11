@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TestReadOnly : MonoBehaviour
 {
-	[System.Serializable]
+	[Serializable]
 	public struct Data
 	{
 		[ReadOnly]
