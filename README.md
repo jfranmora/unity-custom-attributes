@@ -38,9 +38,10 @@ If the field is null, the field will be populated with the first result of GetCo
 If the field is null, the field will be populated with the first result of FindObjectOfType<>
 
 # Planned Attributes
+### Done
 - [x] **ReadOnly**
 - [x] **RequiredField**
-- [x] **ShowIf**
+- [x] **ShowIf(string memberName, bool invert):** Show field if bool result of memberName is true
 - [x] **HideIf(string memberName, bool invert):** Hide field if bool result of memberName is true
 - [x] **HelpBox(string message, HelpBoxMessageType messageType)**
 - [x] **OnValueChanged(string memberName):** Call function when value is changed (Can be useful for validation)
@@ -49,7 +50,18 @@ If the field is null, the field will be populated with the first result of FindO
 - [x] **DefaultGetComponentInChildren**
 - [x] **DefaultGetComponentInParent**
 - [x] **DefaultFindObject**
-- [ ] **EnableIf:** ReadOnly when boolean is false
-- [ ] **DisableIf:** ReadOnly when boolean is true
+
+### Doing
+- [ ] **MinValue(float minValue):** To validate a int/float value
+- [ ] **MaxValue(float maxValue):** To validate a int/float value
+
+### Todo
+- [ ] **EnableIf(string memberName):** ReadOnly when boolean is false
+- [ ] **DisableIf(string memberName):** ReadOnly when boolean is true
 - [ ] **SceneEnum:** Easy way to assign a scene name to a string (Using dropdown)
 - [ ] **Button**
+
+### Ideas
+- **PrefabOnly:** Inspector that will set null the objectReferenceValue if the value is not a prefab
+- **VisibleProperty:** Make property visible on inspector, if doesn't have a setter it will be ReadOnly
+- **ValueDropdown:** Select values from a dropdown, we need a function to provide this data.
