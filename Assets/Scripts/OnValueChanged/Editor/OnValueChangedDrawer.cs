@@ -34,7 +34,7 @@ public class OnValueChangedDrawer : PropertyDrawer
 			BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 		if (methodInfo == null || methodInfo.ReturnType != typeof(void) || methodInfo.GetParameters().Length > 0)
 		{
-			Debug.LogError($"Callback name: {TargetAttribute.CallbackName} not found or is not valid!");
+			Debug.LogError($"Callback name: {TargetAttribute.CallbackName} not found or is not valid!", property.serializedObject.targetObject);
 			return;
 		}
 

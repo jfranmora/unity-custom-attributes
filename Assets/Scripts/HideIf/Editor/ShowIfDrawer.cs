@@ -76,22 +76,14 @@ public class ShowIfDrawer : PropertyDrawer
 
 			if (memberInfo != null)
 			{
-				switch (memberInfo.MemberType)
-				{
-					case MemberTypes.Field:
-						return (bool) ((FieldInfo) memberInfo).GetValue(targetObject);
-					case MemberTypes.Property:
-						return (bool) ((PropertyInfo) memberInfo).GetValue(targetObject);
-					case MemberTypes.Method:
-						return (bool) ((MethodInfo) memberInfo).Invoke(targetObject, null);
-				}
+				return ReflectionUtils.GetValueFromMemberInfo<bool>(memberInfo, targetObject);
 			}
 		}
 		catch
 		{
-			throw new Exception($"[HideIf] {memberName} is not bool");
+			throw new Exception($"[{TargetAttribute.GetType().Name}] {memberName} is not bool");
 		}
 
-		throw new Exception($"[HideIf] There is no field named {memberName}");
+		throw new Exception($"[{TargetAttribute.GetType().Name}] There is no field named {memberName}");
 	}
 }
