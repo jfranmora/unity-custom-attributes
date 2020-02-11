@@ -53,3 +53,8 @@ If the field is null, the field will be populated with the first result of FindO
 - [ ] **DisableIf:** ReadOnly when boolean is true
 - [ ] **SceneEnum:** Easy way to assign a scene name to a string (Using dropdown)
 - [ ] **Button**
+
+## Ideas
+- **PrefabOnly:** Inspector that will set null the objectReferenceValue if the value is not a prefab
+- **VisibleProperty:** Make property visible on inspector, if doesn't have a setter it will be ReadOnly
+- **DropdownSelector:** Select values from a dropdown, we need a function to provide this data.
